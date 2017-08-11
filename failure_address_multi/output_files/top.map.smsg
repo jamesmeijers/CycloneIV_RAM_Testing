@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at top.v(493): always construct contains both blocking and non-blocking assignments File: /home/jmeijers/Documents/BRAM/Individual_Tests/num_failures/top.v Line: 493

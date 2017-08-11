@@ -1,0 +1,41 @@
+
+State Machine - |top|ram_top:memories[23].ram_top_i|state_b
+Name state_b.wait_for_write state_b.start_setup state_b.wait_write state_b.reset_lock state_b.wait_lock state_b.cycle_PLL state_b.run_test state_b.wait_setup state_b.write_ram state_b.reset_PLL 
+state_b.reset_PLL 0 0 0 0 0 0 0 0 0 0 
+state_b.write_ram 0 0 0 0 0 0 0 0 1 1 
+state_b.wait_setup 0 0 0 0 0 0 0 1 0 1 
+state_b.run_test 0 0 0 0 0 0 1 0 0 1 
+state_b.cycle_PLL 0 0 0 0 0 1 0 0 0 1 
+state_b.wait_lock 0 0 0 0 1 0 0 0 0 1 
+state_b.reset_lock 0 0 0 1 0 0 0 0 0 1 
+state_b.wait_write 0 0 1 0 0 0 0 0 0 1 
+state_b.start_setup 0 1 0 0 0 0 0 0 0 1 
+state_b.wait_for_write 1 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top|ram_top:memories[23].ram_top_i|state_a
+Name state_a.wait_to_continue state_a.wait_start_freq state_a.write_start_freq state_a.wait_start_err state_a.write_start_err state_a.hold state_a.done_write_freq state_a.wait_err_4 state_a.write_err_4 state_a.wait_err_3 state_a.write_err_3 state_a.wait_err_2 state_a.write_err_2 state_a.wait_err_1 state_a.write_err_1 state_a.wait_frequency state_a.write_frequency state_a.wait_for_error 
+state_a.wait_for_error 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state_a.write_frequency 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state_a.wait_frequency 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state_a.write_err_1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state_a.wait_err_1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state_a.write_err_2 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state_a.wait_err_2 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state_a.write_err_3 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state_a.wait_err_3 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state_a.write_err_4 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state_a.wait_err_4 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state_a.done_write_freq 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state_a.hold 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state_a.write_start_err 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state_a.wait_start_err 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state_a.write_start_freq 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state_a.wait_start_freq 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state_a.wait_to_continue 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top|ram_top:memories[23].ram_top_i|RAM_Controller:RAM_Controller1|state
+Name state.reset_to_write state.read_data state.align_read state.write_data 
+state.reset_to_write 0 0 0 0 
+state.write_data 1 0 0 1 
+state.align_read 1 0 1 0 
+state.read_data 1 1 0 0 

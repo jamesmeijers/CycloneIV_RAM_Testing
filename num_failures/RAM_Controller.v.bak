@@ -1,0 +1,153 @@
+module RAM_Controller (
+	input clk_fast,
+	input clk_slow_even,
+	input clk_slow_odd,
+	input align,
+	input write_mem,
+	output error_1,
+	output error_2,
+	output reg [1:0] error_address_1,
+	output reg [1:0] error_address_2
+);
+	reg [1:0] address;
+	reg wren;
+	wire clk_enable;
+	reg [1:0] data_to_write;
+	wire q_odd;
+	wire q_even;	
+	wire [1:0] data_even;
+	wire [1:0] data_odd;
+	
+
+	RAM RAM1(
+		.clk_fast( clk_fast ),
+		.clk_slow_even( clk_slow_even ),
+		.clk_slow_odd( clk_slow_odd ),
+		.clk_enable( clk_enable ),
+		.address( address ),
+		.wren( wren ),
+		.data_to_write( data_to_write ),
+		.q_odd( q_odd ),
+		.q_even( q_even )
+	);
+
+	localparam reset_to_write =      4'd0;
+	localparam write_data     =      4'd1;
+	localparam align_read     =      4'd2;
+	localparam align_read_2   =      4'd3;
+	localparam read_data      =      4'd4;
+
+	reg [3:0] state;
+
+	always @(posedge clk_fast) begin
+		if(write_mem) begin 
+			state <= reset_to_write;
+			address <= 2'b0;
+			data_to_write <= data_even;
+			wren <= 1'b1;
+		end
+		else if(align) begin 
+			state <= align_read;
+			address <= 2'b0;
+			data_to_write <= data_even;
+			wren <= 1'b0;
+		end
+		else begin
+			data_to_write <= data_even;
+			case(state)
+				reset_to_write: begin
+					address <= 2'b0;
+					data_to_write <= data_even;
+					state <= write_data;
+					wren <= 1'b1;
+				end
+				write_data: begin
+					if(address[0] == 1'b0) data_to_write <= data_odd;
+					else data_to_write <= data_even;
+				
+					if(address == 2'd3) begin 
+						state <= align_read;
+						wren <= 1'b0;
+					end
+					else begin 
+						state <= write_data;
+						wren <= 1'b1;
+					end
+					
+					address <= address + 2'b1;
+					
+				end
+				align_read: begin
+					wren <= 1'b0;
+					address <= 2'b0;
+					state <= align_read_2;
+					
+				end
+				align_read_2: begin
+					wren <= 1'b0;
+					if( clk_slow_even ) begin //clk_slow_even just read address 0
+						address <= address + 2'd1;
+						state <= read_data;
+					end
+					else begin
+						address <= 2'b0;
+						state <= align_read_2;
+					end
+				end
+				read_data: begin
+					wren <= 1'b0;
+					address <= address + 1'd1;
+					state <= read_data;
+				end
+				default: begin
+					wren <= 1'b0;
+					address <= address;
+					state <= read_data;
+				end
+			endcase
+		end
+	end
+	
+	reg [7:0] prev_add;
+
+	always @ (posedge clk_fast) begin
+		prev_add <= address;
+	end	
+
+
+	module error_check_tree (
+		.clk(clk_slow_even),
+		.read(q_even),
+		.expected(data_even),
+		.error(error_1)
+	);
+
+	module error_check_tree (
+		.clk(clk_slow_odd),
+		.read(q_odd),
+		.expected(data_odd),
+		.error(error_2)
+	);
+
+
+	reg [7:0] even_add_1, even_add_2, even_add_3;
+
+	always @ (posedge clk_slow_even) begin
+		even_add_1 <= prev_add; //even_add_1 = address of mem_read in main mem-out register
+		even_add_2 <= even_add_1; //even_add_2 = address of mem_read in clk_slow_even first register
+		even_add_3 <= even_add_2; 
+		error_address_1 <= even_add_3;
+	end
+
+	reg [7:0] odd_add_1, odd_add_2, odd_add_3;
+
+	always @ (posedge clk_slow_odd) begin
+		odd_add_1 <= prev_add; //even_add_1 = address of mem_read in main mem-out register
+		odd_add_2 <= odd_add_1; //even_add_2 = address of mem_read in clk_slow_even first register
+		odd_add_3 <= odd_add_2; 
+		error_address_1 <= odd_add_3;
+	end
+
+
+
+endmodule

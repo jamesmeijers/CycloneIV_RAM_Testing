@@ -1,0 +1,37 @@
+module RAM (
+	input clk_fast,
+	input clk_slow_even,
+	input clk_slow_odd,
+	input clk_enable,
+	input [1:0]] address,
+	input wren,
+	input data_to_write,
+	output reg q_odd,
+	output reg q_even
+);
+
+	wire q;
+	reg q_fast;
+
+	ram_1_port (
+		.clken( clk_enable ),
+		.address( address ),
+		.clock( clk_fast ),
+		.data( data_to_write ),
+		.wren( wren ),
+		.q( q )
+	);
+
+	always @(posedge clk_fast) begin
+		q_fast <= q;
+	end
+	
+	always @(posedge clk_slow_even) begin
+		q_even <= q;
+	end
+
+	always @(posedge clk_slow_odd) begin
+		q_odd <= q;
+	end
+
+endmodule

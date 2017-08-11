@@ -1,0 +1,211 @@
+module top (
+	input CLOCK_50,
+	input KEY[4:0],
+	input SW[5:0],
+	output LEDG[4:0],
+	output LEDR[17:0]
+	
+	
+);
+	wire clk_fast, clk_slow_even, clk_slow_odd, error_1, error_2, freq_ready;
+	wire [12:0] error_address_1, error_address_2;
+	wire [8:0] frequency;
+	reg align, write_mem, reset, next_frequency, latch_errors, reset_errors;
+	
+
+
+	RAM_Controller RAM_Controller1(
+		.clk_fast( clk_fast ),
+		.clk_slow_even( clk_slow_even ),
+		.clk_slow_odd( clk_slow_odd ),
+		.align( align ),
+		.write_mem( write_mem ),
+		.error_1( error_1 ),
+		.error_2( error_2 ),
+		.error_address_1( error_address_1 ),
+		.error_address_2( error_address_2 )
+	);
+
+	pll pll1(
+		.CLK_50( CLOCK_50 ),
+		.reset( reset ),
+		.next_frequency( next_frequency ),
+		.frequency( frequency ),
+		.freq_ready( freq_ready),
+		.reconfig_CLK( clk_fast ),
+		.half_CLK_1( clk_slow_even ),
+		.half_CLK_2( clk_slow_odd ),
+		.add( 4'd1 )
+	); 
+
+	reg [18:0] counter;
+	reg reset_counter;
+
+	always @ (posedge clk_slow_even) begin
+		if(reset_counter) begin
+			counter <= 19'd0;
+		end
+
+		else begin
+			counter <= counter = 19'd1;		
+		end
+	end
+
+
+	reg [3:0] state;
+
+	localparam start_write = 4'd0;
+	localparam wait_write  = 4'd1;
+	localparam align_reads       = 4'd2;
+	localparam wait_align  = 4'd3;
+	localparam test        = 4'd4;
+	localparam cycle_freq  = 4'd5;
+	localparam wait_freq   = 4'd6;
+
+	always @ (posedge CLOCK_50) begin
+		if (SW[0]) begin
+			state <= start_write;
+		end
+		else begin
+			case (state)
+				start_write: begin
+					reset_counter <= 1'b1;
+					reset_errors <= 1'b1;
+					latch_errors <= 1'b0;
+					next_frequency <= 1'b0;
+					reset <= 1'b0;
+					align <= 1'b0;
+					write_mem <= 1'b1;
+					state <= wait_write;
+				end
+				wait_write: begin
+					reset_counter <= 1'b0;
+					reset_errors <= 1'b0;
+					latch_errors <= 1'b0;
+					next_frequency <= 1'b0;
+					reset <= 1'b0;
+					align <= 1'b0;
+					write_mem <= 1'b0;
+					if (counter > 19'd16384) state <= align_reads;
+					else state <= wait_write;
+				end
+				align_reads: begin
+					reset_counter <= 1'b1;
+					reset_errors <= 1'b0;
+					latch_errors <= 1'b0;
+					next_frequency <= 1'b0;
+					reset <= 1'b0;
+					align <= 1'b1;
+					write_mem <= 1'b0;
+					state <= wait_align;
+				end
+				wait_align: begin
+					reset_errors <= 1'b0;
+					latch_errors <= 1'b0;
+					next_frequency <= 1'b0;
+					reset <= 1'b0;
+					align <= 1'b0;
+					write_mem <= 1'b0;
+					if (counter > 19'd8192) begin 
+						state <= test;
+						reset_counter <= 1'b1;
+					end
+					else  begin
+						state <= wait_align;
+						reset_counter <= 1'b0;
+					end
+				end
+				test: begin
+					reset_counter <= 1'b0;
+					reset_errors <= 1'b0;
+					latch_errors <= 1'b1;
+					next_frequency <= 1'b0;
+					reset <= 1'b0;
+					align <= 1'b0;
+					write_mem <= 1'b0;
+					if (counter > 19'd32767) state <= cycle_freq;
+					else state <= test;
+				end
+				cycle_freq: begin
+					reset_counter <= 1'b1;
+					reset_errors <= 1'b0;
+					latch_errors <= 1'b0;
+					next_frequency <= 1'b1;
+					reset <= 1'b0;
+					align <= 1'b0;
+					write_mem <= 1'b0;
+					state <= wait_freq;
+				end
+				wait_freq: begin
+					reset_counter <= 1'b0;
+					reset_errors <= 1'b0;
+					latch_errors <= 1'b0;
+					next_frequency <= 1'b0;
+					reset <= 1'b0;
+					align <= 1'b0;
+					write_mem <= 1'b0;
+					if(freq_ready) next_state <= align_reads;
+					else next_state <= wait_freq;
+				end
+				default: begin
+					reset_counter <= 1'b0;
+					reset_errors <= 1'b0;
+					latch_errors <= 1'b0;
+					next_frequency <= 1'b0;
+					reset <= 1'b0;
+					align <= 1'b0;
+					write_mem <= 1'b0;
+					state <= align_reads;
+				end
+			endcase
+
+		end
+
+
+	end
+	
+	reg error_latch_1;
+	reg error_latch_2;
+	reg [12:0] error_add_latch_1;
+	reg [12:0] error_add_latch_2;
+	
+	always @ (*) begin
+		if(reset_errors) begin
+			error_latch_1 <= 1'b0;
+			error_latch_2 <= 1'b0;
+			error_add_latch_1 <= 13'd0;
+			error_add_latch_2 <= 13'd0;
+		end
+
+		else if(latch_errors) begin
+			if(error_1 && ~error_latch_1) begin
+				error_latch_1 <= 1'b1;
+				error_add_latch_1 <= error_address_1;
+			end
+			else begin
+				error_latch_1 <= error_latch_1;
+				error_add_latch_1 <= error_add_latch_1;
+			end
+			if(error_2 && ~error_latch_2) begin
+				error_latch_2 <= 1'b1;
+				error_add_latch_2 <= error_address_2;
+			end
+			else begin
+				error_latch_2 <= error_latch_2;
+				error_add_latch_2 <= error_add_latch_2;
+			end
+		end
+		else begin
+			error_latch_1 <= error_latch_1;
+			error_latch_2 <= error_latch_2;
+			error_add_latch_1 <= error_add_latch_1;
+			error_add_latch_2 <= error_add_latch_3;
+		end
+
+
+	end
+
+
+endmodule
+
+

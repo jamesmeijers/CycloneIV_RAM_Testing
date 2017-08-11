@@ -1,0 +1,235 @@
+Flow report for top
+Thu Aug  3 12:19:24 2017
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Thu Aug  3 12:19:24 2017           ;
+; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
+; Revision Name                      ; top                                             ;
+; Top-level Entity Name              ; top                                             ;
+; Family                             ; Cyclone IV E                                    ;
+; Device                             ; EP4CE115F29C7                                   ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 8,286 / 114,480 ( 7 % )                         ;
+;     Total combinational functions  ; 7,433 / 114,480 ( 6 % )                         ;
+;     Dedicated logic registers      ; 4,258 / 114,480 ( 4 % )                         ;
+; Total registers                    ; 4258                                            ;
+; Total pins                         ; 93 / 529 ( 18 % )                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 197,776 / 3,981,312 ( 5 % )                     ;
+; Embedded Multiplier 9-bit elements ; 0 / 532 ( 0 % )                                 ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                  ;
++------------------------------------+-------------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 08/03/2017 11:30:00 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; top                 ;
++-------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                 ;
++-------------------------------------+-------------------------------------------------------------+---------------+-------------+----------------+
+; Assignment Name                     ; Value                                                       ; Default Value ; Entity Name ; Section Id     ;
++-------------------------------------+-------------------------------------------------------------+---------------+-------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 26403105217939.150177420003864                              ; --            ; --          ; --             ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                                                 ; --            ; --          ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)                                   ; <None>        ; --          ; --             ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                          ; --            ; --          ; --             ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; ../RS232UART.cmp                                            ; --            ; --          ; --             ;
+; MISC_FILE                           ; ../../RS232UART.qsys                                        ; --            ; --          ; --             ;
+; MISC_FILE                           ; pll_reconfig_inst.v                                         ; --            ; --          ; --             ;
+; MISC_FILE                           ; pll_reconfig_bb.v                                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; reconfig_pll_inst.v                                         ; --            ; --          ; --             ;
+; MISC_FILE                           ; reconfig_pll_bb.v                                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; reconfig_pll.ppf                                            ; --            ; --          ; --             ;
+; MISC_FILE                           ; ram_1_port_inst.v                                           ; --            ; --          ; --             ;
+; MISC_FILE                           ; ram_1_port_bb.v                                             ; --            ; --          ; --             ;
+; MISC_FILE                           ; ram_1_port_syn.v                                            ; --            ; --          ; --             ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                        ; --            ; --          ; --             ;
+; PARTITION_COLOR                     ; 16764057                                                    ; --            ; --          ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                       ; --            ; --          ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                      ; --            ; --          ; Top            ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                         ; --            ; --          ; --             ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                       ; --            ; --          ; --             ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                ; --            ; --          ; --             ;
+; SLD_FILE                            ; RS232UART.debuginfo                                         ; --            ; --          ; --             ;
+; SLD_INFO                            ; QSYS_NAME RS232UART HAS_SOPCINFO 1 GENERATION_ID 1495835555 ; --            ; RS232UART   ; --             ;
+; SOPCINFO_FILE                       ; ../../RS232UART.sopcinfo                                    ; --            ; --          ; --             ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                          ; --            ; --          ; --             ;
++-------------------------------------+-------------------------------------------------------------+---------------+-------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:18     ; 1.0                     ; 1352 MB             ; 00:00:27                           ;
+; Fitter                    ; 00:00:26     ; 1.0                     ; 1761 MB             ; 00:00:34                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 1017 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 1168 MB             ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 1361 MB             ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:01:23     ; 3.5                     ; 1294 MB             ; 00:04:37                           ;
+; Partition Merge           ; 00:00:02     ; 1.0                     ; 1468 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:01:15     ; 1.1                     ; 1845 MB             ; 00:02:43                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 1044 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.8                     ; 1237 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:08     ; 1.0                     ; 1417 MB             ; 00:00:08                           ;
+; Analysis & Synthesis      ; 00:00:21     ; 1.3                     ; 1319 MB             ; 00:00:39                           ;
+; Partition Merge           ; 00:00:05     ; 1.0                     ; 1583 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:00:38     ; 1.2                     ; 1865 MB             ; 00:00:53                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 1049 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 2.5                     ; 1239 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:08     ; 1.0                     ; 1417 MB             ; 00:00:08                           ;
+; Analysis & Synthesis      ; 00:00:14     ; 1.0                     ; 1354 MB             ; 00:00:25                           ;
+; Partition Merge           ; 00:00:05     ; 1.0                     ; 1586 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:00:38     ; 1.0                     ; 1857 MB             ; 00:00:52                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 1045 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.8                     ; 1240 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:09     ; 1.0                     ; 1416 MB             ; 00:00:08                           ;
+; Analysis & Synthesis      ; 00:01:31     ; 3.5                     ; 1315 MB             ; 00:04:34                           ;
+; Partition Merge           ; 00:00:02     ; 1.0                     ; 1478 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:51     ; 1.1                     ; 1872 MB             ; 00:01:18                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 1042 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.6                     ; 1235 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:09     ; 1.0                     ; 1417 MB             ; 00:00:09                           ;
+; Analysis & Synthesis      ; 00:01:26     ; 3.5                     ; 1336 MB             ; 00:04:38                           ;
+; Partition Merge           ; 00:00:02     ; 1.0                     ; 1479 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:46     ; 1.1                     ; 1871 MB             ; 00:01:09                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 1048 MB             ; 00:00:05                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.8                     ; 1241 MB             ; 00:00:06                           ;
+; EDA Netlist Writer        ; 00:00:09     ; 1.0                     ; 1423 MB             ; 00:00:08                           ;
+; Total                     ; 00:11:45     ; --                      ; --                  ; 00:24:48                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                                  ;
++---------------------------+-----------------------+----------------+------------+----------------+
+; Module Name               ; Machine Hostname      ; OS Name        ; OS Version ; Processor type ;
++---------------------------+-----------------------+----------------+------------+----------------+
+; Analysis & Synthesis      ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Fitter                    ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Assembler                 ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; TimeQuest Timing Analyzer ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; EDA Netlist Writer        ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Analysis & Synthesis      ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Partition Merge           ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Fitter                    ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Assembler                 ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; TimeQuest Timing Analyzer ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; EDA Netlist Writer        ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Analysis & Synthesis      ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Partition Merge           ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Fitter                    ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Assembler                 ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; TimeQuest Timing Analyzer ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; EDA Netlist Writer        ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Analysis & Synthesis      ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Partition Merge           ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Fitter                    ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Assembler                 ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; TimeQuest Timing Analyzer ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; EDA Netlist Writer        ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Analysis & Synthesis      ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Partition Merge           ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Fitter                    ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Assembler                 ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; TimeQuest Timing Analyzer ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; EDA Netlist Writer        ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Analysis & Synthesis      ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Partition Merge           ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Fitter                    ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; Assembler                 ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; TimeQuest Timing Analyzer ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
+; EDA Netlist Writer        ; jmeijers-OptiPlex-790 ; Ubuntu 16.04.2 ; 16         ; x86_64         ;
++---------------------------+-----------------------+----------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off top -c top
+quartus_fit --read_settings_files=off --write_settings_files=off top -c top
+quartus_asm --read_settings_files=off --write_settings_files=off top -c top
+quartus_sta top -c top
+quartus_eda --read_settings_files=off --write_settings_files=off top -c top
+quartus_map --read_settings_files=on --write_settings_files=off top -c top
+quartus_cdb --read_settings_files=off --write_settings_files=off top -c top --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off top -c top
+quartus_asm --read_settings_files=off --write_settings_files=off top -c top
+quartus_sta top -c top
+quartus_eda --read_settings_files=off --write_settings_files=off top -c top
+quartus_map --read_settings_files=on --write_settings_files=off top -c top
+quartus_cdb --read_settings_files=off --write_settings_files=off top -c top --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off top -c top
+quartus_asm --read_settings_files=off --write_settings_files=off top -c top
+quartus_sta top -c top
+quartus_eda --read_settings_files=off --write_settings_files=off top -c top
+quartus_map --read_settings_files=on --write_settings_files=off top -c top
+quartus_cdb --read_settings_files=off --write_settings_files=off top -c top --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off top -c top
+quartus_asm --read_settings_files=off --write_settings_files=off top -c top
+quartus_sta top -c top
+quartus_eda --read_settings_files=off --write_settings_files=off top -c top
+quartus_map --read_settings_files=on --write_settings_files=off top -c top
+quartus_cdb --read_settings_files=off --write_settings_files=off top -c top --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off top -c top
+quartus_asm --read_settings_files=off --write_settings_files=off top -c top
+quartus_sta top -c top
+quartus_eda --read_settings_files=off --write_settings_files=off top -c top
+quartus_map --read_settings_files=on --write_settings_files=off top -c top
+quartus_cdb --read_settings_files=off --write_settings_files=off top -c top --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off top -c top
+quartus_asm --read_settings_files=off --write_settings_files=off top -c top
+quartus_sta top -c top
+quartus_eda --read_settings_files=off --write_settings_files=off top -c top
+
+
+

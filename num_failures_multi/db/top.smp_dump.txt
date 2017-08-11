@@ -1,0 +1,26 @@
+
+State Machine - |top|ram_top:memories[23].ram_top_i|state
+Name state.wait_4_uart state.write_4_uart state.finish_state state.wait_3_uart state.write_3_uart state.wait_2_uart state.write_2_uart state.wait_1_uart state.write_1_uart state.wait_freq state.cycle_freq state.test state.wait_align state.align_reads state.wait_write state.start_write 
+state.start_write 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+state.wait_write 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+state.align_reads 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+state.wait_align 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+state.test 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+state.cycle_freq 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+state.wait_freq 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+state.write_1_uart 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+state.wait_1_uart 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+state.write_2_uart 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+state.wait_2_uart 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+state.write_3_uart 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_3_uart 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+state.finish_state 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.write_4_uart 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+state.wait_4_uart 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |top|ram_top:memories[23].ram_top_i|RAM_Controller:RAM_Controller1|state
+Name state.reset_to_write state.read_data state.align_read state.write_data 
+state.reset_to_write 0 0 0 0 
+state.write_data 1 0 0 1 
+state.align_read 1 0 1 0 
+state.read_data 1 1 0 0 
