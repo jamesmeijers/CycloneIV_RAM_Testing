@@ -1,0 +1,1004 @@
+Partition Merge report for top
+Wed Aug 23 12:05:51 2017
+Quartus Prime Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Partition Merge Partition Warnings
+  5. Partition Merge Partition Statistics
+  6. Partition Merge Partition Pin Processing
+  7. Partition Merge Resource Usage Summary
+  8. Partition Merge RAM Summary
+  9. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2015 Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera MegaCore Function License Agreement, or other 
+applicable license agreement, including, without limitation, 
+that your use is for the sole purpose of programming logic 
+devices manufactured by Altera and sold by Altera or its 
+authorized distributors.  Please refer to the applicable 
+agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Partition Merge Summary                                                              ;
++------------------------------------+-------------------------------------------------+
+; Partition Merge Status             ; Successful - Wed Aug 23 12:05:51 2017           ;
+; Quartus Prime Version              ; 15.1.0 Build 185 10/21/2015 SJ Standard Edition ;
+; Revision Name                      ; top                                             ;
+; Top-level Entity Name              ; top                                             ;
+; Family                             ; Cyclone IV E                                    ;
+; Total logic elements               ; 978                                             ;
+;     Total combinational functions  ; 922                                             ;
+;     Dedicated logic registers      ; 438                                             ;
+; Total registers                    ; 438                                             ;
+; Total pins                         ; 92                                              ;
+; Total virtual pins                 ; 24                                              ;
+; Total memory bits                  ; 32,912                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 1                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                                                                                                         ;
++--------------------------------+----------------+-------------------+------------------------+-----------------------------------------------------------------------------+
+; Partition Name                 ; Partition Type ; Netlist Type Used ; Netlist Type Requested ; Partition Contents                                                          ;
++--------------------------------+----------------+-------------------+------------------------+-----------------------------------------------------------------------------+
+; Top                            ; User-created   ; Source File       ; Source File            ;                                                                             ;
+; ram_1_port:the_ram             ; User-created   ; Post-Synthesis    ; Post-Synthesis         ; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram ;
+; ram_1_port:the_ram_2           ; User-created   ; Post-Synthesis    ; Post-Synthesis         ; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram ;
+; ram_1_port:the_ram_3           ; User-created   ; Post-Synthesis    ; Post-Synthesis         ; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram ;
+; ram_1_port:the_ram_4           ; User-created   ; Post-Synthesis    ; Post-Synthesis         ; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram ;
+; ram_top:ram_top1               ; User-created   ; Post-Synthesis    ; Post-Synthesis         ; ram_top:ram_top1                                                            ;
+; ram_top:ram_top2               ; User-created   ; Post-Synthesis    ; Post-Synthesis         ; ram_top:ram_top2                                                            ;
+; ram_top:ram_top3               ; User-created   ; Post-Synthesis    ; Post-Synthesis         ; ram_top:ram_top3                                                            ;
+; ram_top:ram_top4               ; User-created   ; Post-Synthesis    ; Post-Synthesis         ; ram_top:ram_top4                                                            ;
+; hard_block:auto_generated_inst ; Auto-generated ; Source File       ; Source File            ; hard_block:auto_generated_inst                                              ;
++--------------------------------+----------------+-------------------+------------------------+-----------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Warnings                                                                                                     ;
++----------------------------------------------------------------------------------------+----------------------+------------------------+
+; Port                                                                                   ; Partition            ; Info                   ;
++----------------------------------------------------------------------------------------+----------------------+------------------------+
+; ram_top:ram_top4|test_length[0]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[1]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[2]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[3]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[4]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[5]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[6]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[7]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[8]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[9]                                                        ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[10]                                                       ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[12]                                                       ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[13]                                                       ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[14]                                                       ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[16]                                                       ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|test_length[18]                                                       ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[0]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[1]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[2]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[3]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[4]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[5]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[6]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[7]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[8]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[9]                                                        ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[10]                                                       ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[12]                                                       ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[13]                                                       ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[14]                                                       ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[16]                                                       ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|test_length[18]                                                       ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[0]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[1]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[2]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[3]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[4]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[5]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[6]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[7]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[8]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[9]                                                        ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[10]                                                       ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[12]                                                       ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[13]                                                       ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[14]                                                       ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[16]                                                       ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|test_length[18]                                                       ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[0]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[1]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[2]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[3]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[4]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[5]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[6]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[7]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[8]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[9]                                                        ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[10]                                                       ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[12]                                                       ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[13]                                                       ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[14]                                                       ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[16]                                                       ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|test_length[18]                                                       ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[7]    ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[6]    ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[5]    ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[4]    ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[3]    ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[2]    ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[1]    ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[8] ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[0]    ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|wren       ; ram_1_port:the_ram   ; Driven by constant GND ;
+; ram_top:ram_top1|HEX5[2]                                                               ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|HEX5[1]                                                               ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|HEX2[2]                                                               ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|HEX2[1]                                                               ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|LEDR[6]                                                               ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|LEDR[5]                                                               ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|LEDR[4]                                                               ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|LEDR[3]                                                               ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|LEDR[2]                                                               ; ram_top:ram_top1     ; Driven by constant GND ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[7] ; ram_1_port:the_ram   ; Driven by constant VCC ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[6] ; ram_1_port:the_ram   ; Driven by constant VCC ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[5] ; ram_1_port:the_ram   ; Driven by constant VCC ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[4] ; ram_1_port:the_ram   ; Driven by constant VCC ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[3] ; ram_1_port:the_ram   ; Driven by constant VCC ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[2] ; ram_1_port:the_ram   ; Driven by constant VCC ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[1] ; ram_1_port:the_ram   ; Driven by constant VCC ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[0] ; ram_1_port:the_ram   ; Driven by constant VCC ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|clken      ; ram_1_port:the_ram   ; Driven by constant VCC ;
+; ram_top:ram_top1|HEX5[6]                                                               ; ram_top:ram_top1     ; Driven by constant VCC ;
+; ram_top:ram_top1|HEX2[6]                                                               ; ram_top:ram_top1     ; Driven by constant VCC ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[7]    ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[6]    ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[5]    ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[4]    ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[3]    ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[2]    ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[1]    ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[8] ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[0]    ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|wren       ; ram_1_port:the_ram_2 ; Driven by constant GND ;
+; ram_top:ram_top2|HEX5[2]                                                               ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|HEX5[1]                                                               ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|HEX2[2]                                                               ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|HEX2[1]                                                               ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|LEDR[6]                                                               ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|LEDR[5]                                                               ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|LEDR[4]                                                               ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|LEDR[3]                                                               ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|LEDR[2]                                                               ; ram_top:ram_top2     ; Driven by constant GND ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[7] ; ram_1_port:the_ram_2 ; Driven by constant VCC ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[6] ; ram_1_port:the_ram_2 ; Driven by constant VCC ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[5] ; ram_1_port:the_ram_2 ; Driven by constant VCC ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[4] ; ram_1_port:the_ram_2 ; Driven by constant VCC ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[3] ; ram_1_port:the_ram_2 ; Driven by constant VCC ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[2] ; ram_1_port:the_ram_2 ; Driven by constant VCC ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[1] ; ram_1_port:the_ram_2 ; Driven by constant VCC ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[0] ; ram_1_port:the_ram_2 ; Driven by constant VCC ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|clken      ; ram_1_port:the_ram_2 ; Driven by constant VCC ;
+; ram_top:ram_top2|HEX5[6]                                                               ; ram_top:ram_top2     ; Driven by constant VCC ;
+; ram_top:ram_top2|HEX2[6]                                                               ; ram_top:ram_top2     ; Driven by constant VCC ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[7]    ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[6]    ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[5]    ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[4]    ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[3]    ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[2]    ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[1]    ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[8] ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[0]    ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|wren       ; ram_1_port:the_ram_3 ; Driven by constant GND ;
+; ram_top:ram_top3|HEX5[2]                                                               ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|HEX5[1]                                                               ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|HEX2[2]                                                               ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|HEX2[1]                                                               ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|LEDR[6]                                                               ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|LEDR[5]                                                               ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|LEDR[4]                                                               ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|LEDR[3]                                                               ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|LEDR[2]                                                               ; ram_top:ram_top3     ; Driven by constant GND ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[7] ; ram_1_port:the_ram_3 ; Driven by constant VCC ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[6] ; ram_1_port:the_ram_3 ; Driven by constant VCC ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[5] ; ram_1_port:the_ram_3 ; Driven by constant VCC ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[4] ; ram_1_port:the_ram_3 ; Driven by constant VCC ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[3] ; ram_1_port:the_ram_3 ; Driven by constant VCC ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[2] ; ram_1_port:the_ram_3 ; Driven by constant VCC ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[1] ; ram_1_port:the_ram_3 ; Driven by constant VCC ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[0] ; ram_1_port:the_ram_3 ; Driven by constant VCC ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|clken      ; ram_1_port:the_ram_3 ; Driven by constant VCC ;
+; ram_top:ram_top3|HEX5[6]                                                               ; ram_top:ram_top3     ; Driven by constant VCC ;
+; ram_top:ram_top3|HEX2[6]                                                               ; ram_top:ram_top3     ; Driven by constant VCC ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[7]    ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[6]    ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[5]    ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[4]    ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[3]    ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[2]    ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[1]    ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[8] ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|data[0]    ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|wren       ; ram_1_port:the_ram_4 ; Driven by constant GND ;
+; ram_top:ram_top4|HEX5[2]                                                               ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|HEX5[1]                                                               ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|HEX2[2]                                                               ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|HEX2[1]                                                               ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|LEDR[6]                                                               ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|LEDR[5]                                                               ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|LEDR[4]                                                               ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|LEDR[3]                                                               ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|LEDR[2]                                                               ; ram_top:ram_top4     ; Driven by constant GND ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[7] ; ram_1_port:the_ram_4 ; Driven by constant VCC ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[6] ; ram_1_port:the_ram_4 ; Driven by constant VCC ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[5] ; ram_1_port:the_ram_4 ; Driven by constant VCC ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[4] ; ram_1_port:the_ram_4 ; Driven by constant VCC ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[3] ; ram_1_port:the_ram_4 ; Driven by constant VCC ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[2] ; ram_1_port:the_ram_4 ; Driven by constant VCC ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[1] ; ram_1_port:the_ram_4 ; Driven by constant VCC ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|address[0] ; ram_1_port:the_ram_4 ; Driven by constant VCC ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|clken      ; ram_1_port:the_ram_4 ; Driven by constant VCC ;
+; ram_top:ram_top4|HEX5[6]                                                               ; ram_top:ram_top4     ; Driven by constant VCC ;
+; ram_top:ram_top4|HEX2[6]                                                               ; ram_top:ram_top4     ; Driven by constant VCC ;
+; ram_top:ram_top1|SW[2]                                                                 ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[3]                                                                 ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[4]                                                                 ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[5]                                                                 ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[6]                                                                 ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[7]                                                                 ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[8]                                                                 ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[9]                                                                 ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[10]                                                                ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[11]                                                                ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[12]                                                                ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[13]                                                                ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[14]                                                                ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[15]                                                                ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[16]                                                                ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|SW[17]                                                                ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[0]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[1]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[2]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[3]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[4]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[5]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[6]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[7]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[8]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[9]                                                               ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[10]                                                              ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[11]                                                              ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[12]                                                              ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[13]                                                              ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[14]                                                              ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[15]                                                              ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[16]                                                              ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|LEDR[17]                                                              ; ram_top:ram_top1     ; No fanout              ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[0]       ; ram_1_port:the_ram   ; No fanout              ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[1]       ; ram_1_port:the_ram   ; No fanout              ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[2]       ; ram_1_port:the_ram   ; No fanout              ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[5]       ; ram_1_port:the_ram   ; No fanout              ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[6]       ; ram_1_port:the_ram   ; No fanout              ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[7]       ; ram_1_port:the_ram   ; No fanout              ;
+; ram_top:ram_top2|SW[2]                                                                 ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[3]                                                                 ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[4]                                                                 ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[5]                                                                 ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[6]                                                                 ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[7]                                                                 ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[8]                                                                 ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[9]                                                                 ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[10]                                                                ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[11]                                                                ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[12]                                                                ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[13]                                                                ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[14]                                                                ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[15]                                                                ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[16]                                                                ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|SW[17]                                                                ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[0]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[1]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[2]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[3]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[4]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[5]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[6]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[7]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[8]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[9]                                                               ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[10]                                                              ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[11]                                                              ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[12]                                                              ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[13]                                                              ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[14]                                                              ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[15]                                                              ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[16]                                                              ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|LEDR[17]                                                              ; ram_top:ram_top2     ; No fanout              ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[0]       ; ram_1_port:the_ram_2 ; No fanout              ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[1]       ; ram_1_port:the_ram_2 ; No fanout              ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[2]       ; ram_1_port:the_ram_2 ; No fanout              ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[5]       ; ram_1_port:the_ram_2 ; No fanout              ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[6]       ; ram_1_port:the_ram_2 ; No fanout              ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[7]       ; ram_1_port:the_ram_2 ; No fanout              ;
+; ram_top:ram_top3|SW[2]                                                                 ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[3]                                                                 ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[4]                                                                 ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[5]                                                                 ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[6]                                                                 ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[7]                                                                 ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[8]                                                                 ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[9]                                                                 ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[10]                                                                ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[11]                                                                ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[12]                                                                ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[13]                                                                ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[14]                                                                ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[15]                                                                ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[16]                                                                ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|SW[17]                                                                ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[0]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[1]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[2]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[3]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[4]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[5]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[6]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[7]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[8]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[9]                                                               ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[10]                                                              ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[11]                                                              ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[12]                                                              ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[13]                                                              ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[14]                                                              ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[15]                                                              ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[16]                                                              ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|LEDR[17]                                                              ; ram_top:ram_top3     ; No fanout              ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[0]       ; ram_1_port:the_ram_3 ; No fanout              ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[1]       ; ram_1_port:the_ram_3 ; No fanout              ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[2]       ; ram_1_port:the_ram_3 ; No fanout              ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[5]       ; ram_1_port:the_ram_3 ; No fanout              ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[6]       ; ram_1_port:the_ram_3 ; No fanout              ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[7]       ; ram_1_port:the_ram_3 ; No fanout              ;
+; ram_top:ram_top4|SW[2]                                                                 ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[3]                                                                 ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[4]                                                                 ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[5]                                                                 ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[6]                                                                 ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[7]                                                                 ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[8]                                                                 ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[9]                                                                 ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[10]                                                                ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[11]                                                                ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[12]                                                                ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[13]                                                                ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[14]                                                                ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[15]                                                                ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[16]                                                                ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|SW[17]                                                                ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[0]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[1]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[2]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[3]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[4]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[5]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[6]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[7]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[8]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[9]                                                               ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[10]                                                              ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[11]                                                              ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[12]                                                              ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[13]                                                              ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[14]                                                              ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[15]                                                              ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[16]                                                              ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|LEDR[17]                                                              ; ram_top:ram_top4     ; No fanout              ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[0]       ; ram_1_port:the_ram_4 ; No fanout              ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[1]       ; ram_1_port:the_ram_4 ; No fanout              ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[2]       ; ram_1_port:the_ram_4 ; No fanout              ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[5]       ; ram_1_port:the_ram_4 ; No fanout              ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[6]       ; ram_1_port:the_ram_4 ; No fanout              ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[7]       ; ram_1_port:the_ram_4 ; No fanout              ;
++----------------------------------------------------------------------------------------+----------------------+------------------------+
+Note: The Incremental Compilation Advisor can be used to get more detailed recommendations.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                                                                                                                                                      ;
++---------------------------------------------+------+--------------------+----------------------+----------------------+----------------------+------------------+------------------+------------------+------------------+--------------------------------+
+; Statistic                                   ; Top  ; ram_1_port:the_ram ; ram_1_port:the_ram_2 ; ram_1_port:the_ram_3 ; ram_1_port:the_ram_4 ; ram_top:ram_top1 ; ram_top:ram_top2 ; ram_top:ram_top3 ; ram_top:ram_top4 ; hard_block:auto_generated_inst ;
++---------------------------------------------+------+--------------------+----------------------+----------------------+----------------------+------------------+------------------+------------------+------------------+--------------------------------+
+; Estimated Total logic elements              ; 430  ; 0                  ; 0                    ; 0                    ; 0                    ; 137              ; 137              ; 137              ; 137              ; 0                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; Total combinational functions               ; 410  ; 0                  ; 0                    ; 0                    ; 0                    ; 128              ; 128              ; 128              ; 128              ; 0                              ;
+; Logic element usage by number of LUT inputs ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+;     -- 4 input functions                    ; 266  ; 0                  ; 0                    ; 0                    ; 0                    ; 36               ; 36               ; 36               ; 36               ; 0                              ;
+;     -- 3 input functions                    ; 30   ; 0                  ; 0                    ; 0                    ; 0                    ; 25               ; 25               ; 25               ; 25               ; 0                              ;
+;     -- <=2 input functions                  ; 114  ; 0                  ; 0                    ; 0                    ; 0                    ; 67               ; 67               ; 67               ; 67               ; 0                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; Logic elements by mode                      ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+;     -- normal mode                          ; 350  ; 0                  ; 0                    ; 0                    ; 0                    ; 76               ; 76               ; 76               ; 76               ; 0                              ;
+;     -- arithmetic mode                      ; 60   ; 0                  ; 0                    ; 0                    ; 0                    ; 52               ; 52               ; 52               ; 52               ; 0                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; Total registers                             ; 150  ; 0                  ; 0                    ; 0                    ; 0                    ; 72               ; 72               ; 72               ; 72               ; 0                              ;
+;     -- Dedicated logic registers            ; 150  ; 0                  ; 0                    ; 0                    ; 0                    ; 72               ; 72               ; 72               ; 72               ; 0                              ;
+;     -- I/O registers                        ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 0                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; Virtual pins                                ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 6                ; 6                ; 6                ; 6                ; 0                              ;
+; I/O pins                                    ; 92   ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 0                              ;
+; Embedded Multiplier 9-bit elements          ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 0                              ;
+; Total memory bits                           ; 144  ; 8192               ; 8192                 ; 8192                 ; 8192                 ; 0                ; 0                ; 0                ; 0                ; 0                              ;
+; Total RAM block bits                        ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 0                              ;
+; PLL                                         ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 1                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; Connections                                 ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+;     -- Input Connections                    ; 182  ; 112                ; 112                  ; 112                  ; 112                  ; 189              ; 189              ; 189              ; 189              ; 6                              ;
+;     -- Registered Input Connections         ; 2    ; 112                ; 112                  ; 112                  ; 112                  ; 81               ; 81               ; 81               ; 81               ; 0                              ;
+;     -- Output Connections                   ; 670  ; 8                  ; 8                    ; 8                    ; 8                    ; 144              ; 144              ; 144              ; 144              ; 114                            ;
+;     -- Registered Output Connections        ; 296  ; 8                  ; 8                    ; 8                    ; 8                    ; 14               ; 14               ; 14               ; 14               ; 0                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; Internal Connections                        ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+;     -- Total Connections                    ; 2704 ; 120                ; 120                  ; 120                  ; 120                  ; 697              ; 697              ; 697              ; 697              ; 121                            ;
+;     -- Registered Connections               ; 950  ; 120                ; 120                  ; 120                  ; 120                  ; 297              ; 297              ; 297              ; 297              ; 0                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; External Connections                        ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+;     -- Top                                  ; 32   ; 0                  ; 0                    ; 0                    ; 0                    ; 202              ; 202              ; 202              ; 202              ; 12                             ;
+;     -- ram_1_port:the_ram                   ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 112              ; 0                ; 0                ; 0                ; 8                              ;
+;     -- ram_1_port:the_ram_2                 ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 112              ; 0                ; 0                ; 8                              ;
+;     -- ram_1_port:the_ram_3                 ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 112              ; 0                ; 8                              ;
+;     -- ram_1_port:the_ram_4                 ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 112              ; 8                              ;
+;     -- ram_top:ram_top1                     ; 202  ; 112                ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 19                             ;
+;     -- ram_top:ram_top2                     ; 202  ; 0                  ; 112                  ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 19                             ;
+;     -- ram_top:ram_top3                     ; 202  ; 0                  ; 0                    ; 112                  ; 0                    ; 0                ; 0                ; 0                ; 0                ; 19                             ;
+;     -- ram_top:ram_top4                     ; 202  ; 0                  ; 0                    ; 0                    ; 112                  ; 0                ; 0                ; 0                ; 0                ; 19                             ;
+;     -- hard_block:auto_generated_inst       ; 12   ; 8                  ; 8                    ; 8                    ; 8                    ; 19               ; 19               ; 19               ; 19               ; 0                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; Partition Interface                         ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+;     -- Input Ports                          ; 24   ; 21                 ; 21                   ; 21                   ; 21                   ; 52               ; 52               ; 52               ; 52               ; 6                              ;
+;     -- Output Ports                         ; 68   ; 8                  ; 8                    ; 8                    ; 8                    ; 62               ; 62               ; 62               ; 62               ; 5                              ;
+;     -- Bidir Ports                          ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 0                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; Registered Ports                            ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+;     -- Registered Input Ports               ; 0    ; 21                 ; 21                   ; 21                   ; 21                   ; 5                ; 5                ; 5                ; 5                ; 0                              ;
+;     -- Registered Output Ports              ; 0    ; 8                  ; 8                    ; 8                    ; 8                    ; 17               ; 17               ; 17               ; 17               ; 0                              ;
+;                                             ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+; Port Connectivity                           ;      ;                    ;                      ;                      ;                      ;                  ;                  ;                  ;                  ;                                ;
+;     -- Input Ports driven by GND            ; 0    ; 10                 ; 10                   ; 10                   ; 10                   ; 16               ; 16               ; 16               ; 16               ; 0                              ;
+;     -- Output Ports driven by GND           ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 9                ; 9                ; 9                ; 9                ; 0                              ;
+;     -- Input Ports driven by VCC            ; 0    ; 9                  ; 9                    ; 9                    ; 9                    ; 0                ; 0                ; 0                ; 0                ; 0                              ;
+;     -- Output Ports driven by VCC           ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 2                ; 2                ; 2                ; 2                ; 0                              ;
+;     -- Input Ports with no Source           ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 0                              ;
+;     -- Output Ports with no Source          ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 0                ; 0                ; 0                ; 0                ; 0                              ;
+;     -- Input Ports with no Fanout           ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 16               ; 16               ; 16               ; 16               ; 1                              ;
+;     -- Output Ports with no Fanout          ; 0    ; 0                  ; 0                    ; 0                    ; 0                    ; 18               ; 18               ; 18               ; 18               ; 0                              ;
++---------------------------------------------+------+--------------------+----------------------+----------------------+----------------------+------------------+------------------+------------------+------------------+--------------------------------+
+Note: Resource usage numbers presented for Partitions containing post-synthesis logic are estimates.  For Partitions containing post-fit logic, resource usage numbers are accurate based on previous placement information.  Actual Fitter results may vary depending on current Fitter Preservation Level assignments.
+
+
++-----------------------------------------------------------------------------+
+; Partition Merge Partition Pin Processing                                    ;
++------------------------+-----------+---------------+----------+-------------+
+; Name                   ; Partition ; Type          ; Location ; Status      ;
++------------------------+-----------+---------------+----------+-------------+
+; CLOCK_50               ; Top       ; Input Port    ; n/a      ;             ;
+;     -- CLOCK_50        ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- CLOCK_50~input  ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX0[0]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX0[0]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX0[0]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX0[1]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX0[1]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX0[1]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX0[2]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX0[2]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX0[2]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX0[3]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX0[3]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX0[3]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX0[4]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX0[4]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX0[4]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX0[5]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX0[5]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX0[5]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX0[6]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX0[6]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX0[6]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX1[0]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX1[0]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX1[0]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX1[1]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX1[1]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX1[1]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX1[2]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX1[2]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX1[2]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX1[3]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX1[3]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX1[3]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX1[4]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX1[4]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX1[4]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX1[5]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX1[5]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX1[5]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX1[6]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX1[6]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX1[6]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX2[0]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX2[0]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX2[0]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX2[1]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX2[1]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX2[1]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX2[2]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX2[2]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX2[2]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX2[3]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX2[3]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX2[3]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX2[4]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX2[4]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX2[4]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX2[5]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX2[5]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX2[5]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX2[6]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX2[6]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX2[6]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX3[0]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX3[0]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX3[0]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX3[1]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX3[1]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX3[1]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX3[2]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX3[2]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX3[2]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX3[3]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX3[3]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX3[3]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX3[4]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX3[4]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX3[4]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX3[5]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX3[5]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX3[5]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX3[6]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX3[6]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX3[6]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX4[0]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX4[0]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX4[0]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX4[1]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX4[1]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX4[1]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX4[2]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX4[2]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX4[2]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX4[3]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX4[3]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX4[3]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX4[4]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX4[4]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX4[4]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX4[5]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX4[5]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX4[5]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX4[6]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX4[6]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX4[6]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX5[0]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX5[0]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX5[0]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX5[1]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX5[1]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX5[1]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX5[2]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX5[2]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX5[2]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX5[3]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX5[3]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX5[3]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX5[4]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX5[4]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX5[4]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX5[5]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX5[5]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX5[5]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; HEX5[6]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- HEX5[6]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- HEX5[6]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; KEY[0]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- KEY[0]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- KEY[0]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; KEY[1]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- KEY[1]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- KEY[1]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; KEY[2]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- KEY[2]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- KEY[2]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; KEY[3]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- KEY[3]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- KEY[3]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; KEY[4]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- KEY[4]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- KEY[4]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDG[0]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDG[0]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDG[0]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDG[1]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDG[1]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDG[1]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDG[2]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDG[2]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDG[2]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDG[3]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDG[3]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDG[3]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDG[4]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDG[4]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDG[4]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDG[5]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDG[5]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDG[5]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDG[6]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDG[6]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDG[6]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDG[7]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDG[7]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDG[7]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[0]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[0]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[0]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[10]               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[10]        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[10]~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[11]               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[11]        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[11]~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[12]               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[12]        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[12]~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[13]               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[13]        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[13]~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[14]               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[14]        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[14]~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[15]               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[15]        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[15]~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[16]               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[16]        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[16]~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[17]               ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[17]        ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[17]~output ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[1]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[1]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[1]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[2]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[2]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[2]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[3]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[3]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[3]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[4]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[4]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[4]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[5]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[5]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[5]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[6]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[6]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[6]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[7]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[7]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[7]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[8]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[8]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[8]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; LEDR[9]                ; Top       ; Output Port   ; n/a      ;             ;
+;     -- LEDR[9]         ; Top       ; Output Pad    ; Unplaced ; Synthesized ;
+;     -- LEDR[9]~output  ; Top       ; Output Buffer ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[0]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[0]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[0]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[10]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[10]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[10]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[11]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[11]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[11]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[12]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[12]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[12]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[13]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[13]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[13]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[14]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[14]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[14]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[15]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[15]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[15]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[16]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[16]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[16]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[17]                 ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[17]          ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[17]~input    ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[1]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[1]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[1]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[2]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[2]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[2]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[3]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[3]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[3]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[4]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[4]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[4]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[5]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[5]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[5]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[6]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[6]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[6]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[7]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[7]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[7]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[8]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[8]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[8]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
+; SW[9]                  ; Top       ; Input Port    ; n/a      ;             ;
+;     -- SW[9]           ; Top       ; Input Pad     ; Unplaced ; Synthesized ;
+;     -- SW[9]~input     ; Top       ; Input Buffer  ; Unplaced ; Synthesized ;
+;                        ;           ;               ;          ;             ;
++------------------------+-----------+---------------+----------+-------------+
+
+
++--------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                       ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 978            ;
+;                                             ;                ;
+; Total combinational functions               ; 922            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 410            ;
+;     -- 3 input functions                    ; 130            ;
+;     -- <=2 input functions                  ; 382            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 654            ;
+;     -- arithmetic mode                      ; 268            ;
+;                                             ;                ;
+; Total registers                             ; 438            ;
+;     -- Dedicated logic registers            ; 438            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; Virtual pins                                ; 24             ;
+; I/O pins                                    ; 92             ;
+; Total memory bits                           ; 32912          ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Total PLLs                                  ; 1              ;
+;     -- PLLs                                 ; 1              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 319            ;
+; Total fan-out                               ; 4384           ;
+; Average fan-out                             ; 2.73           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge RAM Summary                                                                                                                                                                                                                                             ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
+; Name                                                                                                                                                                  ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF     ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
+; pll:pll1|pll_reconfig:pll_reconfig_inst|pll_reconfig_pllrcfg_kr01:pll_reconfig_pllrcfg_kr01_component|altsyncram:altsyncram4|altsyncram_5lv:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 144          ; 1            ; --           ; --           ; 144  ; None    ;
+; ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|altsyncram:altsyncram_component|altsyncram_ttj1:auto_generated|ALTSYNCRAM                 ; M9K  ; Single Port ; 1024         ; 8            ; --           ; --           ; 8192 ; ram.mif ;
+; ram_top:ram_top2|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|altsyncram:altsyncram_component|altsyncram_ttj1:auto_generated|ALTSYNCRAM                 ; M9K  ; Single Port ; 1024         ; 8            ; --           ; --           ; 8192 ; ram.mif ;
+; ram_top:ram_top3|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|altsyncram:altsyncram_component|altsyncram_ttj1:auto_generated|ALTSYNCRAM                 ; M9K  ; Single Port ; 1024         ; 8            ; --           ; --           ; 8192 ; ram.mif ;
+; ram_top:ram_top4|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|altsyncram:altsyncram_component|altsyncram_ttj1:auto_generated|ALTSYNCRAM                 ; M9K  ; Single Port ; 1024         ; 8            ; --           ; --           ; 8192 ; ram.mif ;
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+---------+
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Partition Merge
+    Info: Version 15.1.0 Build 185 10/21/2015 SJ Standard Edition
+    Info: Processing started: Wed Aug 23 12:05:51 2017
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off top -c top --merge=on
+Info (35007): Using synthesis netlist for partition "Top"
+Info (35007): Using synthesis netlist for partition "ram_top:ram_top1" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 126
+Info (35007): Using synthesis netlist for partition "ram_1_port:the_ram" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/RAM.v Line: 24
+Info (35007): Using synthesis netlist for partition "ram_top:ram_top2" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 145
+Info (35007): Using synthesis netlist for partition "ram_1_port:the_ram_2" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/RAM.v Line: 24
+Info (35007): Using synthesis netlist for partition "ram_top:ram_top3" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 164
+Info (35007): Using synthesis netlist for partition "ram_1_port:the_ram_3" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/RAM.v Line: 24
+Info (35007): Using synthesis netlist for partition "ram_top:ram_top4" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 183
+Info (35007): Using synthesis netlist for partition "ram_1_port:the_ram_4" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/RAM.v Line: 24
+Info (35002): Resolved and merged 9 partition(s)
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Info (35048): Found 184 ports with constant drivers. For more information, refer to the Partition Merger report
+Info (35047): Found 160 ports with no fan-out. For more information, refer to the Partition Merger report
+Warning (35016): Found partition port(s) not driving logic, possibly wasting area
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[8]", driven by node "ram_top:ram_top1|fail_count[1]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[9]", driven by node "ram_top:ram_top1|fail_count[2]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[10]", driven by node "ram_top:ram_top1|fail_count[3]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[11]", driven by node "ram_top:ram_top1|fail_count[4]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[12]", driven by node "ram_top:ram_top1|fail_count[5]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[13]", driven by node "ram_top:ram_top1|fail_count[6]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[14]", driven by node "ram_top:ram_top1|fail_count[7]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[15]", driven by node "ram_top:ram_top1|fail_count[8]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[16]", driven by node "ram_top:ram_top1|fail_count[9]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[17]", driven by node "ram_top:ram_top1|fail_count[10]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[1]", driven by node "ram_top:ram_top1|RAM_Controller:RAM_Controller1|error_2", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/RAM_Controller.v Line: 7
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[7]", driven by node "ram_top:ram_top1|fail_count[0]", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 316
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[0]", driven by node "ram_top:ram_top1|RAM_Controller:RAM_Controller1|error_1", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/RAM_Controller.v Line: 5
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[6]", driven by node "ram_top:ram_top1|~GND", does not drive logic
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[5]", driven by node "ram_top:ram_top1|~GND", does not drive logic
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[4]", driven by node "ram_top:ram_top1|~GND", does not drive logic
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[3]", driven by node "ram_top:ram_top1|~GND", does not drive logic
+    Warning (35018): Partition port "ram_top:ram_top1|LEDR[2]", driven by node "ram_top:ram_top1|~GND", does not drive logic
+    Warning (35017): Partition port "ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[0]", driven by node "ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|altsyncram:altsyncram_component|altsyncram_ttj1:auto_generated|ram_block1a0", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/db/altsyncram_ttj1.tdf Line: 38
+    Warning (35017): Partition port "ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|q[1]", driven by node "ram_top:ram_top1|RAM_Controller:RAM_Controller1|RAM:RAM1|ram_1_port:the_ram|altsyncram:altsyncram_component|altsyncram_ttj1:auto_generated|ram_block1a1", does not drive logic File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/db/altsyncram_ttj1.tdf Line: 63
+    Warning (35039): Only the first 20 ports are reported. For a full list of ports, refer to the Partition Warnings panel in the Partition Merge report
+Warning (21074): Design contains 17 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[0]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[2]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[3]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[4]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[4]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[5]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[6]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[7]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[8]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[9]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[10]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[11]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[12]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[13]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[14]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+    Warning (15610): No output dependent on input pin "SW[15]" File: /home/jmeijers/Documents/BRAM/Individual_Tests/TESTS/top.v Line: 4
+Info (21057): Implemented 1133 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 24 input pins
+    Info (21059): Implemented 68 output pins
+    Info (21061): Implemented 1007 logic cells
+    Info (21064): Implemented 33 RAM segments
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Partition Merge was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 1446 megabytes
+    Info: Processing ended: Wed Aug 23 12:05:52 2017
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+
