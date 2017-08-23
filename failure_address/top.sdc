@@ -1,9 +1,9 @@
 #create_clock -name {clk} -period 6  [get_ports {SMA_CLKIN}]
 create_clock -name {CLOCK_50} -period 20 -waveform { 0 5} [get_ports {CLOCK_50}]
 
-create_generated_clock -name clk_fast -source [get_ports {CLOCK_50}] -divide_by 40 -multiply_by 480  [get_ports clk_fast]
-create_generated_clock -name clk_slow_even -source [get_ports {clk_fast}] -divide_by 2  [get_ports clk_slow_even]
-create_generated_clock -name clk_slow_odd -source [get_ports {clk_slow_even}] -divide_by 1  -phase 180 [get_ports clk_slow_odd]
+create_generated_clock -name clk_fast -source [get_ports {CLOCK_50}] -divide_by 40 -multiply_by 480  [get_nets *clk[0]]
+create_generated_clock -name clk_slow_even -source [get_ports {CLOCK_50}] -divide_by 80 -multiply_by 480  [get_nets *clk[1]]
+create_generated_clock -name clk_slow_odd -source [get_ports {CLOCK_50}] -divide_by 80 -multiply_by 480 -phase 180 [get_nets *clk[2]]
 #set_multicycle_path -from [get_cells {clock_gate_from_fsm*}] -setup -end 3
 #set_multicycle_path -from [get_cells {clock_gate_from_fsm*}] -hold -end 2
 
